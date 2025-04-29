@@ -1,0 +1,154 @@
+<!-- Goal is to create html page with buttons show the progres of the Knee Calibrator -->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div id = "controlPanel">
+        <!--This is the title control panel-->
+        <h1 id="titleName"> Control Panel </h1>
+
+        <section>
+            <!--This has the main buttons and arrow buttons-->
+            <h2 id="connectionStatus">Powered Off</h2>
+            <!--This container has the direction buttons-->
+            <div class="btnContainer flexContainer">
+              <button class="directionButton" id="stop">&#128308 </button>
+              <button class="directionButton" id="reset">&#128993</button>
+              <button class="directionButton" id="start">&#128994</button>
+            </div>
+            <!--This container has the button definitions-->
+            <div class="container">
+              <p>&#128308: <strong class="flexItem" id="valX">Stop</strong></p>
+              <p>&#128993: <strong class="flexItem" id="valY">Reset</strong></p>
+              <p>&#128994: <strong class="flexItem" id="valZ">Start</strong></p>
+            </div>
+        </section>
+
+        <div id="infoLogBox">
+            <p>This box displays progress</p>
+
+        </div>
+    </div>
+</body>
+
+<!--This is the start of the style sections-->
+<style>
+    body{
+        background-color: rgb(119, 106, 106);
+    }
+    #controlPanel{
+        background-color: rgb(180, 164, 164);
+        width: 100%;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        padding: 10px;
+        width: 80%;
+        margin: auto;
+        border: 5px solid rgb(18, 16, 145);
+        border-radius: 10px;
+    }
+
+    #infoLogBox{
+        height:70px;width:250px;overflow:auto;border:8px solid rgb(39, 39, 146);padding:2%; border-radius: 10%; text-align: center;margin:auto;
+    }
+   
+    #connectionStatus{
+        color: rgb(195, 35, 35);
+    }
+    /* This is the style so the box is not rigid and can be used in different screen sizes */
+  .flexContainer{
+    display: flex;
+    justify-content: center;
+  }
+  .directionButton{
+    border:none;
+    font-size: 3.5em;
+    margin: 5px;
+    background-color: transparent;
+    text-shadow: 3px 3px 2px rgba(108, 113, 128, 1);
+    transition: 50ms ease-in;
+  }
+  .container{
+    text-align: center;
+    font-size: large;
+  }
+  .btnContainer{
+    height: 10vh;
+  }
+
+  .directionButton:hover{
+    cursor: pointer;
+    font-size: 4.5em;
+  }
+
+
+</style>
+
+<!--This is the script section-->
+<!--Goal 1: Press Button and display text in the box-->
+<!--Goal 2: Text changes when button is pressed that it is turned on-->
+<!--Goal 3: Press Button and log command-->
+<!--Goal 4: Display the commands in the log-->
+<script>
+    const titleName = document.getElementById('titleName');
+    const valX = document.getElementById('valX');
+    const connectStatus = document.getElementById('connectionStatus');
+    const valStart = document.getElementById('start');
+    const valStop = document.getElementById('stop');
+    const valReset = document.getElementById('reset');
+
+
+    // define the function to change the HTML content
+    const changeConnectionOn = function (){
+        console.log("POWERED ON")
+        // get the new connection word
+        connectStatus.style.color = 'green';
+        connectStatus.textContent = 'Powered On';
+        const sentStatus = 'on';
+    }
+    // change the connection when the button is pressed
+    valStart.addEventListener('click', changeConnectionOn);
+
+    // define the function to change the HTML content
+    const changeConnectionReset = function (){
+        console.log("RESETTING")
+        // get the new connection word
+        connectStatus.style.color = 'yellow';
+        connectStatus.textContent = 'Resetting';
+        const sentStatus = 'reset';
+    }
+    // change the connection when the button is pressed
+    valReset.addEventListener('click', changeConnectionReset);
+
+    // define the function to change the HTML content
+    const changeConnectionOff = function (){
+        console.log("POWERING OFF")
+        // get the new connection word
+        connectStatus.style.color = 'red';
+        connectStatus.textContent = 'Powered Off';
+        const sentStatus = 'off';
+        sendHTML(sentStatus);
+    }
+    // change the connection when the button is pressed
+    valStop.addEventListener('click', changeConnectionOff);
+
+    // this is from the github website to send the information to the Pi
+    var valStart = document.getElementById("range1");
+    var output = document.getElementById("range1_value");
+    output.innerHTML = slider.value;
+
+    const sendHTML = function(sentStatus) {
+      output.innerHTML = slider.value;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        }
+      };
+      // change to be the value of the pi ip
+      xhttp.open("GET", "http://192.168.2.103:5000/set_speed?speed=" + slider.value, true); 
+      xhttp.send();
+    }
+
+
+</script>
+</html>
