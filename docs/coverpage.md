@@ -16,7 +16,7 @@
   <div>
     <a href="[insert website or pdf of report]" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px; margin-right: 20px;">CAPSTONE Paper</a>
     <a href="https://github.com/xMagiJinx/capstone.git" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px; margin-right: 20px;">GitHub</a>
-    <a href="docs/images/UG230704_Orca_Series_Modbus_RTU_with_MATLAB.pdf" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px;">Orca-3 MATLAB</a>
+    <a href="https://github.com/IrisDynamics/orca_matlab_source.git" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px;">Orca-3 GitHub</a>
     
     
   </div>
