@@ -5,9 +5,9 @@
   
   <h1 >EX401 </h1>
   
-  <h2> Prosthetic Knee Automated Calibration System </h2>
+  <h2 style="color: black; background-color: white"> Prosthetic Knee Automated Calibration System </h2>
 
-  <ul style="list-style-type: none; padding: 0; font-family: 'IM Fell English', serif;">
+  <ul style="list-style-type: none; padding: 10px 20px; font-family: 'calibri', serif; color: black; background-color: white; border-radius: 10px">
     <li style="font-size: 20px;">MIDN 1/C Izzy Fadullon, Karl Adriano (EGE) </li>
     <li style="font-size: 20px;">MIDN 1/C Bella Rubijono, Moises Hernandez, Jackson Davis (ERC) </li>
     <li style="font-size: 20px;">Interdisciplinary Senior Design Project</li>
