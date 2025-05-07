@@ -53,4 +53,3 @@ To enable seamless communication between the MATLAB script and the Python calibr
   <img src="images/group_photo.png" alt="Group Photo" style="max-width: 100%; height: auto;" />
 </div>
 
-#
