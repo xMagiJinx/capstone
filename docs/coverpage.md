@@ -7,7 +7,7 @@
   
   <h2 style="color: black; background-color: white"> Prosthetic Knee Automated Calibration System </h2>
 
-  <ul style="list-style-type: none; padding: 10px 20px; font-family: 'calibri', serif; color: black; background-color: white; border-radius: 10px">
+  <ul style="list-style-type: none; padding: 10px 20px; font-family: 'calibri', serif; color: black; background-color: white; border-radius: 10px; margin-bottom: 25px">
     <li style="font-size: 20px;">MIDN 1/C Izzy Fadullon, Karl Adriano (EGE) </li>
     <li style="font-size: 20px;">MIDN 1/C Bella Rubijono, Moises Hernandez, Jackson Davis (ERC) </li>
     <li style="font-size: 20px;">Interdisciplinary Senior Design Project</li>
@@ -15,7 +15,7 @@
 
   <div>
     <a href="[insert website or pdf of report]" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px; margin-right: 20px;">CAPSTONE Paper</a>
-    <a href="https://github.com/xMagiJinx/capstone.git" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px;">GitHub</a>
+    <a href="https://github.com/xMagiJinx/capstone.git" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px; margin-right: 20px;">GitHub</a>
     <a href="docs/images/UG230704_Orca_Series_Modbus_RTU_with_MATLAB.pdf" style="color: white; font-size: 20px; text-decoration: none; padding: 10px 20px; background-color: #D4A59D; border-radius: 10px;">Orca-3 MATLAB</a>
     
     
