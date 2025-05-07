@@ -1,0 +1,41 @@
+% Initial Setup
+portnum = inputdlg('Enter RS422 COM Port Number:'); % Enter COM port
+port = strcat("COM", portnum);
+orca = Actuator(port, 19200);  % Actuator initialization
+force_threshold = 45000; % Force threshold (mN)
+
+% Serial communication setup for Pico
+pySerial = serialport("COM4", 9600);  % Update COM port if needed
+writeline(pySerial, "MATLAB: Serial connection established");
+
+% Memory Map addresses for reading force and position
+SHAFT_POS_UM_address = 342;
+FORCE_REGISTER_address = 350;  % Example address for force register
+
+% Move Actuator and Get Force/Position
+orca.change_mode(orca.KinematicMode);  % Ensure actuator is in kinematic mode
+
+%% Kinematic Configuration
+% Configure & execute motion
+orca.configure_motion(0, 0, 1000, 200, 1, 0, 0); % Start at postion 0 
+orca.configure_motion(1, 50000, 1000, 200, 2, 0, 0);
+
+% Trigger motion, for example:
+orca.kinematic_trigger(1);
+
+% Read force and position values
+orca.read_stream(SHAFT_POS_UM_address, 1); 
+fprintf("Current shaft position: %d µm\n", orca.position);
+orca.read_register(SHAFT_POS_UM_address, 1);
+orca.read_register(FORCE_REGISTER_address, 1);
+
+fprintf("Position: %d µm\n", position);
+fprintf("Force: %d mN\n", force);
+
+% Send position and force to Pico
+writeline(pySerial, strcat("Position:", num2str(position), ",Force:", num2str(force)));
+
+pause(1);  % Wait for the Pico to process
+
+% Close serial communication
+writeline(pySerial, "Done");
