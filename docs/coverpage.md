@@ -1,6 +1,6 @@
 <!-- markdownlint-disable first-line-h1 -->
 
-<div style="background: background: linear-gradient(#3f87a6, #ebf8e1, #f69d3c); text-align: center; color: white; padding: 50px 20px; border-radius: 15px;">
+<div style="background: background: linear-gradient(#3f87a6, #ebf8e1,rgb(60, 69, 246)); text-align: center; color: white; padding: 50px 20px; border-radius: 15px;">
   <img src="images/logo2.png" alt="Logo" style="" />
   
   <h1 >EX401 </h1>
